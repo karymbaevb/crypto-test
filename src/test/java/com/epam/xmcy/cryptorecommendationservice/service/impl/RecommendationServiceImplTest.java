@@ -88,7 +88,7 @@ class RecommendationServiceImplTest {
         assertNotNull(actual);
         assertEquals(BigDecimal.ONE, actual.getMinimum());
         assertEquals(BigDecimal.TEN, actual.getMaximum());
-        assertEquals(BigDecimal.ONE, actual.getNewest());
+        assertEquals(BigDecimal.TEN, actual.getNewest());
         assertEquals(BigDecimal.ONE, actual.getOldest());
     }
 
@@ -111,37 +111,37 @@ class RecommendationServiceImplTest {
         CryptoModel btcOne = new CryptoModel();
         btcOne.setName(BTC);
         btcOne.setPrice(BigDecimal.valueOf(1));
-        btcOne.setTimestamp(LocalDateTime.now().minusDays(1));
+        btcOne.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,00)).minusDays(1));
         btcOne.setNormalizedValue(BigDecimal.ZERO);
 
         CryptoModel btcOne2 = new CryptoModel();
         btcOne2.setName(BTC);
         btcOne2.setPrice(BigDecimal.valueOf(1));
-        btcOne2.setTimestamp(LocalDateTime.now());
+        btcOne2.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,01)));
         btcOne2.setNormalizedValue(BigDecimal.ZERO);
 
         CryptoModel btcFour = new CryptoModel();
         btcFour.setName(BTC);
         btcFour.setPrice(BigDecimal.valueOf(4));
-        btcFour.setTimestamp(LocalDateTime.now().plusDays(1));
+        btcFour.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,02)).plusDays(1));
         btcFour.setNormalizedValue(BigDecimal.valueOf(0.4));
 
         CryptoModel btcFive = new CryptoModel();
         btcFive.setName(BTC);
         btcFive.setPrice(BigDecimal.valueOf(5));
-        btcFive.setTimestamp(LocalDateTime.now().plusDays(1));
+        btcFive.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,03)).plusDays(1));
         btcFive.setNormalizedValue(BigDecimal.valueOf(0.5));
 
         CryptoModel btcTen = new CryptoModel();
         btcTen.setName(BTC);
         btcTen.setPrice(BigDecimal.TEN);
-        btcTen.setTimestamp(LocalDateTime.now());
+        btcTen.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,04)));
         btcTen.setNormalizedValue(BigDecimal.ONE);
 
         CryptoModel btcTen2 = new CryptoModel();
         btcTen2.setName(BTC);
         btcTen2.setPrice(BigDecimal.TEN);
-        btcTen2.setTimestamp(LocalDateTime.now());
+        btcTen2.setTimestamp(LocalDateTime.of(LocalDate.now(), LocalTime.of(12,05)));
         btcTen2.setNormalizedValue(BigDecimal.ONE);
 
         CryptoModel btcEmpty = new CryptoModel();

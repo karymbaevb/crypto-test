@@ -116,7 +116,7 @@ class CryptoRecommendationControllerIT {
         assertEquals(BigDecimal.valueOf(33276.59), infoModel.getMinimum());
         assertEquals(BigDecimal.valueOf(47722.66), infoModel.getMaximum());
         assertEquals(BigDecimal.valueOf(46813.21), infoModel.getOldest());
-        assertEquals(BigDecimal.valueOf(38415.79), infoModel.getNewest());
+        assertEquals(BigDecimal.valueOf(37300.31), infoModel.getNewest());
     }
 
     @Test
